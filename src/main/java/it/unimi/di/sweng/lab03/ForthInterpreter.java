@@ -16,6 +16,8 @@ public class ForthInterpreter implements  Interpreter{
         op = new HashMap<>();
         op.put("+", ()->queue.push(queue.pop()+queue.pop()));
         op.put("*", ()->queue.push(queue.pop()*queue.pop()));
+        op.put("-", ()->queue.push(queue.pop()-queue.pop()));
+        op.put("/", ()->queue.push(queue.pop()/queue.pop()));
     }
     @Override
     public void input(String program) {
