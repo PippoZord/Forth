@@ -1,6 +1,7 @@
 package it.unimi.di.sweng.lab03;
 
 import java.util.ArrayDeque;
+import java.util.NoSuchElementException;
 
 
 public class ForthInterpreter implements  Interpreter{
@@ -31,8 +32,10 @@ public class ForthInterpreter implements  Interpreter{
                 } else {
                     queue.add(Integer.parseInt(s));
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 throw new IllegalArgumentException("Token error '" + s + "'");
+            } catch (NoSuchElementException e){
+                throw new IllegalArgumentException("Stack Underflow");
             }
         }
     }
