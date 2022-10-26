@@ -25,7 +25,11 @@ public class ForthInterpreter implements  Interpreter{
 
     private void addQueue(String[] st) {
         for (String s : st) {
-            queue.add(Integer.parseInt(s));
+            if (s.equals("+")){
+                queue.push(queue.pop()+queue.pop());
+            } else {
+                queue.add(Integer.parseInt(s));
+            }
         }
     }
 
