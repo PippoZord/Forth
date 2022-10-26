@@ -25,10 +25,14 @@ public class ForthInterpreter implements  Interpreter{
 
     private void addQueue(String[] st) {
         for (String s : st) {
-            if (s.equals("+")){
-                queue.push(queue.pop()+queue.pop());
-            } else {
-                queue.add(Integer.parseInt(s));
+            try {
+                if (s.equals("+")){
+                    queue.push(queue.pop()+queue.pop());
+                } else {
+                    queue.add(Integer.parseInt(s));
+                }
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Token error '" + s + "'");
             }
         }
     }
