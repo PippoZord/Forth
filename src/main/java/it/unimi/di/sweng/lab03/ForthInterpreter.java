@@ -14,5 +14,11 @@ public class ForthInterpreter implements  Interpreter{
     public void input(String program) {
         
     }
+
+
+    @Override
+    public String toString(){
+        return "<- Top";
+    }
     
 }
