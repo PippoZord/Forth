@@ -60,7 +60,7 @@ public class ForthInterpreterTest {
     assertThat(interpreter.toString()).isEqualTo("8 <- Top");
   }
 
- /*@Test
+  @Test
   public void testInputException() {
 
     assertThatThrownBy(() -> {
@@ -73,6 +73,7 @@ public class ForthInterpreterTest {
 
   }
 
+  /*
   @Test
   public void testInputAritmetchiException()  {
     assertThatThrownBy(() -> {
