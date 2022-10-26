@@ -5,7 +5,8 @@ import java.util.ArrayDeque;
 
 public class ForthInterpreter implements  Interpreter{
 
-    ArrayDeque<Integer> queue;
+    private ArrayDeque<Integer> queue;
+
     public ForthInterpreter(){
         queue = new ArrayDeque<>();
 
@@ -13,6 +14,7 @@ public class ForthInterpreter implements  Interpreter{
     @Override
     public void input(String program) {
         
+
     }
 
 
