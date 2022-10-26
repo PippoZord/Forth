@@ -2,7 +2,6 @@ package it.unimi.di.sweng.lab03;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -80,7 +79,7 @@ public class ForthInterpreterTest {
       interpreter.input("1 +");
     }).isInstanceOf(IllegalArgumentException.class).hasMessage("Stack Underflow");
   }
-  /*
+  
   @Test
   public void testInputMul() {
     interpreter.input("1 2 *");
@@ -90,12 +89,20 @@ public class ForthInterpreterTest {
   }
 
   @Test
-  public void testInputdiv() {
+  public void testInputSub() {
     interpreter.input("1 2 -");
     assertThat(interpreter.toString()).isEqualTo("-1 <- Top");
     interpreter.input("1 2 /");
     assertThat(interpreter.toString()).isEqualTo("0 <- Top");
-  }*/
+  }
+
+  @Test
+  public void testInputDiv() {
+    interpreter.input("1 2 -");
+    assertThat(interpreter.toString()).isEqualTo("-1 <- Top");
+    interpreter.input("1 2 /");
+    assertThat(interpreter.toString()).isEqualTo("0 <- Top");
+  }
 }
 
 
