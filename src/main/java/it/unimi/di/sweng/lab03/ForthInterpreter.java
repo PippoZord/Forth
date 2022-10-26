@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 
-public class ForthInterpreter implements  Interpreter{
+public class ForthInterpreter implements Interpreter {
 
     private ArrayDeque<Integer> queue;
     private Map<String, Runnable> op;
