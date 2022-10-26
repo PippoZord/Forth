@@ -80,7 +80,7 @@ public class ForthInterpreterTest {
       interpreter.input("1 +");
     }).isInstanceOf(IllegalArgumentException.class).hasMessage("Stack Underflow");
   }
-  /*
+  
   @Test
   public void testInputMul() {
     interpreter.input("1 2 *");
@@ -88,7 +88,7 @@ public class ForthInterpreterTest {
     interpreter.input("1 2 * 5 *");
     assertThat(interpreter.toString()).isEqualTo("10 <- Top");
   }
-
+/*
   @Test
   public void testInputdiv() {
     interpreter.input("1 2 -");

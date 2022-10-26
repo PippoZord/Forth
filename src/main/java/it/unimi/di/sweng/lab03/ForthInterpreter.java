@@ -1,16 +1,21 @@
 package it.unimi.di.sweng.lab03;
 
 import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 
 public class ForthInterpreter implements  Interpreter{
 
     private ArrayDeque<Integer> queue;
+    private Map<String, Runnable> op;
 
     public ForthInterpreter(){
         queue = new ArrayDeque<>();
-
+        op = new HashMap<>();
+        op.put("+", ()->queue.push(queue.pop()+queue.pop()));
+        op.put("*", ()->queue.push(queue.pop()*queue.pop()));
     }
     @Override
     public void input(String program) {
@@ -27,8 +32,8 @@ public class ForthInterpreter implements  Interpreter{
     private void addQueue(String[] st) {
         for (String s : st) {
             try {
-                if (s.equals("+")){
-                    queue.push(queue.pop()+queue.pop());
+                if (op.containsKey(s)){
+                    op.get(s).run();
                 } else {
                     queue.add(Integer.parseInt(s));
                 }
