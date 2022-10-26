@@ -13,14 +13,24 @@ public class ForthInterpreter implements  Interpreter{
     }
     @Override
     public void input(String program) {
-        
+        queue.clear();
+        if (program.equals("")){return;}
+        String st[] = program.split(" ");
+    
+        for (String s : st) {
+            queue.add(Integer.parseInt(s));
+        }
 
     }
 
 
     @Override
     public String toString(){
-        return "<- Top";
+        String s = "";
+        for (Integer i : queue) {
+            s += i + " ";
+        }
+        return s + "<- Top";
     }
     
 }
