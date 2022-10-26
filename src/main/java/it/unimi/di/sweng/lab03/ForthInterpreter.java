@@ -14,18 +14,28 @@ public class ForthInterpreter implements  Interpreter{
     @Override
     public void input(String program) {
         queue.clear();
-        if (program.equals("")){return;}
-        String tmp = program.replaceAll("\n+", " ");
-        String st[] = tmp.split(" +");
+        
+        String st[] = split(program);
     
-        for (String s : st) {
-            System.out.println(s);
-            queue.add(Integer.parseInt(s));
-        }
+        addQueue(st);
+        
 
     }
 
 
+    private void addQueue(String[] st) {
+        for (String s : st) {
+            System.out.println(s);
+            queue.add(Integer.parseInt(s));
+        }
+    }
+
+    private String[] split(String program) {
+        if (program.equals("")) return new String[0];
+        String tmp = program.replaceAll("\n+", " ");
+        return tmp.split(" +");
+        
+    }
     @Override
     public String toString(){
         String s = "";
@@ -34,12 +44,5 @@ public class ForthInterpreter implements  Interpreter{
         }
         return s + "<- Top";
     }
-    
-    public static void main(String[] args) {
-        ForthInterpreter f = new ForthInterpreter();
-        f.input("1 2");
-        f.input("1\n2");
-        f.input("1   \n2");
-    
-    }
+
 }
