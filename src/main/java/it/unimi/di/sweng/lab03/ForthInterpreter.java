@@ -16,7 +16,7 @@ public class ForthInterpreter implements  Interpreter{
         queue.clear();
         
         String st[] = split(program);
-    
+        
         addQueue(st);
         
 
@@ -25,7 +25,6 @@ public class ForthInterpreter implements  Interpreter{
 
     private void addQueue(String[] st) {
         for (String s : st) {
-            System.out.println(s);
             queue.add(Integer.parseInt(s));
         }
     }
