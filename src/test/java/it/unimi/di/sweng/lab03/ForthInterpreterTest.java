@@ -73,14 +73,14 @@ public class ForthInterpreterTest {
 
   }
 
-  /*
+  
   @Test
   public void testInputAritmetchiException()  {
     assertThatThrownBy(() -> {
       interpreter.input("1 +");
     }).isInstanceOf(IllegalArgumentException.class).hasMessage("Stack Underflow");
   }
-
+  /*
   @Test
   public void testInputMul() {
     interpreter.input("1 2 *");
